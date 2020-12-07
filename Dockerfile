@@ -8,6 +8,8 @@ RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
 ENV DOCKER_VERSION 20.10.0-rc2
 
+WORKDIR /tmp
+
 RUN set -eux; \
 	\
 	rm -rf /app; \
