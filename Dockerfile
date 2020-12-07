@@ -1,4 +1,6 @@
-FROM composer:latest
+ARG COMP_VER=latest
+
+FROM composer:${COMP_VER}
 
 RUN apk add --no-cache \
 		ca-certificates \
