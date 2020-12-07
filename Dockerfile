@@ -13,6 +13,12 @@ WORKDIR /tmp
 RUN set -eux; \
 	\
 	rm -rf /app; \
+	apk add --no-cache --virtual .build-deps \
+    libzip-dev \
+    zlib-dev \
+		libpng-dev \
+		; \
+	docker-php-ext-install gd; \
 	apkArch="$(apk --print-arch)"; \
 	case "$apkArch" in \
 		'x86_64') \
