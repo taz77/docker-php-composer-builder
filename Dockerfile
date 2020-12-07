@@ -17,8 +17,16 @@ RUN set -eux; \
     libzip-dev \
     zlib-dev \
 		libpng-dev \
+		freetype-dev \
+		libjpeg-turbo-dev \
 		; \
-	docker-php-ext-install gd; \
+	docker-php-ext-configure gd \
+		--with-freetype \
+		--with-jpeg=/usr/include \
+		; \
+	docker-php-ext-install -j "$(nproc)" \
+		gd \
+		; \
 	apkArch="$(apk --print-arch)"; \
 	case "$apkArch" in \
 		'x86_64') \
