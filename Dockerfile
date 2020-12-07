@@ -26,6 +26,7 @@ RUN set -eux; \
 		; \
 	docker-php-ext-install -j "$(nproc)" \
 		gd \
+		zip \
 		; \
 	apkArch="$(apk --print-arch)"; \
 	case "$apkArch" in \
