@@ -59,13 +59,15 @@ jobs:
         name: Build and push 1.x
         id: docker_build3
         uses: docker/build-push-action@v2
+        env:
+          COMP_VER: 1.10.19
         with:
           builder: ${{ steps.builder3.outputs.name }}
           push: true
           build-args: |
-            COMP_VER=1.10.19
+            COMP_VER=${{ env.COMP_VER }}
           tags: |
-            bowens/docker-php-composer-builder:1.10.19
+            bowens/docker-php-composer-builder:${{ env.COMP_VER }}
       -
         name: Notify Slack
         uses: 8398a7/action-slack@v3
