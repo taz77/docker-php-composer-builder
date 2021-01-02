@@ -21,6 +21,7 @@ RUN set -eux; \
 		libpng-dev \
 		freetype-dev \
 		libjpeg-turbo-dev \
+		sqlite \
 		; \
 	docker-php-ext-configure gd \
 		--with-freetype \
