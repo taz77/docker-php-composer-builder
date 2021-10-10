@@ -34,16 +34,16 @@ RUN set -eux; \
 	apkArch="$(apk --print-arch)"; \
 	case "$apkArch" in \
 		'x86_64') \
-			url='https://download.docker.com/linux/static/test/x86_64/docker-20.10.0-rc2.tgz'; \
+			url='https://download.docker.com/linux/static/stable/x86_64/docker-20.10.9.tgz'; \
 			;; \
 		'armhf') \
-			url='https://download.docker.com/linux/static/test/armel/docker-20.10.0-rc2.tgz'; \
+			url='https://download.docker.com/linux/static/stable/armel/docker-20.10.9.tgz'; \
 			;; \
 		'armv7') \
-			url='https://download.docker.com/linux/static/test/armhf/docker-20.10.0-rc2.tgz'; \
+			url='https://download.docker.com/linux/static/stable/armhf/docker-20.10.9.tgz'; \
 			;; \
 		'aarch64') \
-			url='https://download.docker.com/linux/static/test/aarch64/docker-20.10.0-rc2.tgz'; \
+			url='https://download.docker.com/linux/static/stable/aarch64/docker-20.10.9.tgz'; \
 			;; \
 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;; \
 	esac; \
