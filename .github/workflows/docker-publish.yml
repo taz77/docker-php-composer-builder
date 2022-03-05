@@ -59,7 +59,7 @@ jobs:
         id: docker_build2
         uses: docker/build-push-action@v2
         env:
-          COMP_VER: 2.2.1
+          COMP_VER: 2.2.7
         with:
           builder: ${{ steps.builder2.outputs.name }}
           push: true
@@ -73,7 +73,7 @@ jobs:
         id: docker_build3
         uses: docker/build-push-action@v2
         env:
-          COMP_VER: 1.10.24
+          COMP_VER: 1.10.25
         with:
           builder: ${{ steps.builder3.outputs.name }}
           push: true
