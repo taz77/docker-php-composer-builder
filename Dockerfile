@@ -1,9 +1,8 @@
 ARG COMP_VER=latest
-ARG YQ_VERSION=4.27.2
-ARG YQ_BINARY=yq_darwin_amd64
 
 FROM bowens/composer:${COMP_VER}
-
+ARG YQ_VERSION=4.27.2
+ARG YQ_BINARY=yq_darwin_amd64
 RUN apk add --no-cache \
 		ca-certificates \
 		openssh-client
