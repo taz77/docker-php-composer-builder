@@ -1,7 +1,7 @@
 ARG COMP_VER=latest
 
 FROM bowens/composer:${COMP_VER}
-ARG YQ_VERSION=4.27.2
+ARG YQ_VERSION=v4.27.2
 ARG YQ_BINARY=yq_darwin_amd64
 RUN apk add --no-cache \
 		ca-certificates \
