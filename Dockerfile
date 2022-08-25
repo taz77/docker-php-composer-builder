@@ -1,4 +1,6 @@
 ARG COMP_VER=latest
+ARG YQ_VERSION=4.27.2
+ARG YQ_BINARY=yq_darwin_amd64
 
 FROM bowens/composer:${COMP_VER}
 
@@ -22,8 +24,10 @@ RUN set -eux; \
 		freetype-dev \
 		libjpeg-turbo-dev \
 		sqlite \
-        yq \
 		; \
+    wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY}.tar.gz -O - | \
+      tar xz && mv ${YQ_BINARY} /usr/bin/yq \
+    ; \
 	docker-php-ext-configure gd \
 		--with-freetype \
 		--with-jpeg=/usr/include \
