@@ -8,7 +8,7 @@ RUN apk add --no-cache \
 
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
-ENV DOCKER_VERSION 20.10.16
+ENV DOCKER_VERSION 20.10.17
 
 WORKDIR /tmp
 
