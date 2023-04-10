@@ -15,6 +15,8 @@ WORKDIR /tmp
 
 RUN set -eux; \
 	\
+	apk update; \
+  apk upgrade; \
 	rm -rf /app; \
 	apk add --no-cache --virtual .build-deps \
     libzip-dev \
