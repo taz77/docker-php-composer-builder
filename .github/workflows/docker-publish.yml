@@ -19,7 +19,7 @@ jobs:
         uses: docker/setup-qemu-action@v1
       -
         name: Login to DockerHub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -59,7 +59,7 @@ jobs:
         id: docker_build2
         uses: docker/build-push-action@v2
         env:
-          COMP_VER: 2.4.1
+          COMP_VER: 2.4.4
         with:
           builder: ${{ steps.builder2.outputs.name }}
           push: true
