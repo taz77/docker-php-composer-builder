@@ -57,6 +57,7 @@ jobs:
         with:
           builder: ${{ steps.builder2.outputs.name }}
           push: true
+          platforms: linux/amd64,linux/arm/v7
           build-args: |
             COMP_VER=${{ env.COMP_VER }}
           tags: |
@@ -70,6 +71,7 @@ jobs:
         with:
           builder: ${{ steps.builder3.outputs.name }}
           push: true
+          platforms: linux/amd64,linux/arm/v7
           build-args: |
             COMP_VER=${{ env.COMP_VER }}
           tags: |
